@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>User Registration</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-light">
+    <div class="container mt-5">
+      <h2 class="mb-4">User Registration</h2>
+      <form id="registrationForm">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Contact</label>
+          <input type="tel" class="form-control" id="contact" required />
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Address</label>
+          <textarea class="form-control" id="address" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Register</button>
+        <a href="view.html" class="btn btn-secondary ms-2">View Users</a>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

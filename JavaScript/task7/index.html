@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Train Animation</title>
+    <style>
+      .train-container {
+        position: relative;
+        width: 100%;
+        height: 200px;
+        overflow: hidden;
+      }
+      #train {
+        position: absolute;
+        left: -100px;
+        transition: left 0.1s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="train-container">
+      <img id="train" src="toy-train.png" alt="Train" />
+    </div>
+    <h3 style="color: navy; text-align: center">
+      Click the following buttons to handle animation
+    </h3>
+    <div style="text-align: center">
+      <button onclick="startAnimation()">Start</button>
+      <button onclick="stopAnimation()">Stop</button>
+    </div>
+
+    <script>
+      let animationId;
+      let position = -100;
+      const train = document.getElementById("train");
+
+      function moveTrain() {
+        position += 2;
+        if (position > window.innerWidth) {
+          position = -100;
+        }
+        train.style.left = position + "px";
+        animationId = requestAnimationFrame(moveTrain);
+      }
+
+      function startAnimation() {
+        if (!animationId) {
+          moveTrain();
+        }
+      }
+
+      function stopAnimation() {
+        if (animationId) {
+          cancelAnimationFrame(animationId);
+          animationId = null;
+        }
+      }
+    </script>
+  </body>
+</html>

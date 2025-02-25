@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Builderz - Construction Company</title>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --primary-yellow: #ffb800;
+        --dark-blue: #0b2154;
+      }
+      .top-bar {
+        background-color: var(--primary-yellow);
+        padding: 10px 0;
+      }
+      .top-bar-info {
+        color: var(--dark-blue);
+        font-size: 14px;
+      }
+      .navbar {
+        background-color: var(--dark-blue);
+        padding: 15px 0;
+      }
+      .navbar-brand {
+        font-size: 28px;
+        font-weight: bold;
+        color: var(--primary-yellow) !important;
+      }
+      .nav-link {
+        color: white !important;
+        margin: 0 10px;
+      }
+      .hero-section {
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(0, 0, 0, 0.5)
+          ),
+          url("image.webp");
+        background-size: cover;
+        background-position: center;
+        height: 500px;
+        display: flex;
+        align-items: center;
+        color: white;
+      }
+      .get-quote-btn {
+        background-color: var(--primary-yellow);
+        color: var(--dark-blue);
+        padding: 10px 25px;
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+      .service-box {
+        padding: 30px;
+        text-align: center;
+        height: 100%;
+      }
+      .service-box.yellow {
+        background-color: var(--primary-yellow);
+      }
+      .service-box.blue {
+        background-color: var(--dark-blue);
+        color: white;
+      }
+      .service-icon {
+        font-size: 40px;
+        margin-bottom: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Top Bar -->
+    <div class="top-bar">
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col-md-4 top-bar-info">
+            <i class="far fa-clock me-2"></i>Opening Hour: Mon - Fri, 8:00 -
+            9:00
+          </div>
+          <div class="col-md-4 top-bar-info text-center">
+            <i class="fas fa-phone-alt me-2"></i>Call Us: +012 345 6789
+          </div>
+          <div class="col-md-4 top-bar-info text-end">
+            <i class="far fa-envelope me-2"></i>Email Us: info@example.com
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="#">Builderz</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ABOUT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">SERVICE</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">TEAM</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">PROJECT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">PAGES</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">CONTACT</a>
+            </li>
+          </ul>
+          <button class="get-quote-btn">Get A Quote</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8">
+            <h5 class="mb-3">We Are Professional</h5>
+            <h1 class="display-4 mb-4">For Your Dream Project</h1>
+            <button class="get-quote-btn">GET A QUOTE</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Services Section -->
+    <div class="container-fluid px-0">
+      <div class="row g-0">
+        <div class="col-md-4">
+          <div class="service-box blue">
+            <i class="fas fa-hard-hat service-icon"></i>
+            <h4>Expert Worker</h4>
+            <p>
+              Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit
+              non
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box yellow">
+            <i class="fas fa-building service-icon"></i>
+            <h4>Quality Work</h4>
+            <p>
+              Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit
+              non
+            </p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="service-box blue">
+            <i class="fas fa-headset service-icon"></i>
+            <h4>24/7 Support</h4>
+            <p>
+              Lorem ipsum dolor sit amet elit. Phasus nec pretim ornare velit
+              non
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

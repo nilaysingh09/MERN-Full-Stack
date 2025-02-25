@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f8f8f8;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .form-container {
+        background-color: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        width: 300px;
+      }
+      label {
+        font-weight: bold;
+        display: block;
+        margin: 10px 0 5px;
+      }
+      input,
+      select {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 16px;
+      }
+      .error {
+        color: red;
+        font-size: 12px;
+        display: none;
+      }
+      input:invalid,
+      select:invalid {
+        border: 2px solid red;
+      }
+      .submit-btn {
+        width: 100%;
+        padding: 10px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <form id="registrationForm">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required />
+        <div class="error" id="nameError">Name is required</div>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required />
+        <div class="error" id="emailError">Email is required</div>
+
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required />
+        <div class="error" id="passwordError">Password is required</div>
+
+        <label for="hobbies">Hobbies</label>
+        <select id="hobbies" name="hobbies" required>
+          <option value="" disabled selected>Select a hobby</option>
+          <option value="reading">Reading</option>
+          <option value="sports">Sports</option>
+          <option value="music">Music</option>
+        </select>
+        <div class="error" id="hobbiesError">Please select a hobby</div>
+
+        <button type="submit" class="submit-btn">Submit</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          let isValid = true;
+
+          if (document.getElementById("name").value === "") {
+            document.getElementById("nameError").style.display = "block";
+            isValid = false;
+          } else {
+            document.getElementById("nameError").style.display = "none";
+          }
+
+          if (document.getElementById("email").value === "") {
+            document.getElementById("emailError").style.display = "block";
+            isValid = false;
+          } else {
+            document.getElementById("emailError").style.display = "none";
+          }
+
+          if (document.getElementById("password").value === "") {
+            document.getElementById("passwordError").style.display = "block";
+            isValid = false;
+          } else {
+            document.getElementById("passwordError").style.display = "none";
+          }
+
+          if (document.getElementById("hobbies").value === "") {
+            document.getElementById("hobbiesError").style.display = "block";
+            isValid = false;
+          } else {
+            document.getElementById("hobbiesError").style.display = "none";
+          }
+
+          if (!isValid) {
+            event.preventDefault();
+          }
+        });
+    </script>
+  </body>
+</html>

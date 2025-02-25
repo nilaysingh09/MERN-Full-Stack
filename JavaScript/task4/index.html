@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Date and Time Display</title>
+    <style>
+      button {
+        margin: 10px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="showDate()">show date</button>
+    <div id="dateDisplay"></div>
+
+    <button onclick="showTime()">show Time</button>
+    <div id="timeDisplay"></div>
+
+    <script>
+      function showDate() {
+        const date = new Date();
+        const formattedDate = `${date.getDate()}/${getMonthName(
+          date.getMonth()
+        )}/${date.getFullYear()}`;
+        document.getElementById("dateDisplay").textContent = formattedDate;
+      }
+
+      function showTime() {
+        const date = new Date();
+        const options = {
+          weekday: "short",
+          month: "short",
+          day: "2-digit",
+          year: "numeric",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          timeZoneName: "short",
+        };
+        const formattedTime = date
+          .toLocaleString("en-US", options)
+          .replace(/,/g, "");
+        document.getElementById("timeDisplay").textContent =
+          formattedTime + " (India Standard Time)";
+      }
+
+      function getMonthName(month) {
+        const months = [
+          "January",
+          "February",
+          "March",
+          "April",
+          "May",
+          "June",
+          "July",
+          "August",
+          "September",
+          "October",
+          "November",
+          "December",
+        ];
+        return months[month];
+      }
+    </script>
+  </body>
+</html>

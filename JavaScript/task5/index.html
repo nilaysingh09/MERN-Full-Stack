@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Validation</title>
+    <style>
+      .error {
+        color: red;
+        display: none;
+        margin-left: 10px;
+      }
+      input,
+      textarea {
+        border: 1px solid red;
+        margin: 5px 0;
+      }
+      label {
+        display: inline-block;
+        width: 80px;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="validationForm" onsubmit="return validateForm()">
+      <div>
+        <label>Name:</label>
+        <input type="text" id="name" />
+        <span class="error" id="nameError">This field is required</span>
+      </div>
+      <div>
+        <label>Email:</label>
+        <input type="email" id="email" />
+        <span class="error" id="emailError"
+          >A valid email address is required</span
+        >
+      </div>
+      <div>
+        <label>Website:</label>
+        <input type="url" id="website" />
+        <span class="error" id="websiteError">A valid url is required</span>
+      </div>
+      <div>
+        <label>Message:</label>
+        <textarea id="message"></textarea>
+        <span class="error" id="messageError">This field is required</span>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+
+    <script>
+      function validateForm() {
+        let isValid = true;
+        const fields = ["name", "email", "website", "message"];
+
+        fields.forEach((field) => {
+          const element = document.getElementById(field);
+          const error = document.getElementById(field + "Error");
+
+          if (!element.value) {
+            error.style.display = "inline";
+            isValid = false;
+          } else {
+            error.style.display = "none";
+
+            if (field === "email") {
+              if (!/\S+@\S+\.\S+/.test(element.value)) {
+                error.style.display = "inline";
+                isValid = false;
+              }
+            }
+
+            if (field === "website") {
+              try {
+                new URL(element.value);
+              } catch {
+                error.style.display = "inline";
+                isValid = false;
+              }
+            }
+          }
+        });
+
+        return isValid;
+      }
+    </script>
+  </body>
+</html>

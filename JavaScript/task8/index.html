@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background: linear-gradient(45deg, #ffefba, #ff9a9e);
+        padding: 20px;
+      }
+      .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+      .form-group {
+        margin-bottom: 15px;
+      }
+      .form-group label {
+        display: inline-block;
+        width: 150px;
+        margin-right: 10px;
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 300px;
+        padding: 5px;
+      }
+      .error {
+        color: red;
+        font-size: 12px;
+        margin-left: 160px;
+      }
+      .register-btn {
+        background: #ff0000;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        margin-left: 160px;
+      }
+      .languages {
+        margin-left: 160px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2 style="color: blue; text-align: center">Registration form</h2>
+      <form id="registrationForm">
+        <div class="form-group">
+          <label>First Name</label>
+          <input type="text" id="firstName" required />
+          <div class="error">POOR</div>
+        </div>
+        <div class="form-group">
+          <label>Last Name</label>
+          <input type="text" id="lastName" required />
+          <div class="error">POOR</div>
+        </div>
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="email" required />
+          <div class="error">POOR</div>
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="password" required />
+          <div class="error">POOR</div>
+        </div>
+        <div class="form-group">
+          <label>Re-enter Password</label>
+          <input type="password" id="rePassword" required />
+          <div class="error">POOR OR MISMATCH</div>
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <input type="radio" name="gender" value="male" style="width: auto" />
+          Male
+          <input
+            type="radio"
+            name="gender"
+            value="female"
+            style="width: auto"
+          />
+          Female
+        </div>
+        <div class="form-group">
+          <label>Age</label>
+          <input type="number" id="age" required />
+          <div class="error">POOR</div>
+        </div>
+        <div class="form-group">
+          <label>Phone Number</label>
+          <input type="tel" id="phone" required />
+          <div class="error">POOR</div>
+        </div>
+        <div class="form-group">
+          <label>Address</label>
+          <textarea id="address" required></textarea>
+          <div class="error">POOR</div>
+        </div>
+        <div class="form-group">
+          <label>State</label>
+          <input type="text" id="state" required />
+          <div class="error">POOR</div>
+        </div>
+        <div class="form-group">
+          <label>Country</label>
+          <select id="country" required>
+            <option value="">Choose your country</option>
+            <option value="india">India</option>
+            <option value="usa">USA</option>
+            <option value="uk">UK</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Languages Known</label>
+          <div class="languages">
+            <input type="checkbox" name="lang" value="english" /> English
+            <input type="checkbox" name="lang" value="kannada" /> Kannada
+            <input type="checkbox" name="lang" value="hindi" /> Hindi
+            <input type="checkbox" name="lang" value="telugu" /> Telugu
+          </div>
+        </div>
+        <div class="form-group">
+          <input
+            type="checkbox"
+            id="declare"
+            required
+            style="width: auto; margin-left: 160px"
+          />
+          <label style="width: auto"
+            >Hereby I declare all the given details are true</label
+          >
+        </div>
+        <button type="submit" class="register-btn">REGISTER</button>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+
+          // Validate passwords match
+          const password = document.getElementById("password").value;
+          const rePassword = document.getElementById("rePassword").value;
+
+          if (password !== rePassword) {
+            alert("Passwords do not match!");
+            return;
+          }
+
+          // Add form validation and submission logic here
+          alert("Registration form submitted successfully!");
+        });
+    </script>
+  </body>
+</html>
